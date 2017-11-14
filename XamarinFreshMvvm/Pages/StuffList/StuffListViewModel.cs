@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using FreshMvvm;
+using Xamarin.Forms;
 using XamarinFreshMvvm.Helpers;
 using XamarinFreshMvvm.Pages.StuffDetails;
 using XamarinFreshMvvm.Services;
@@ -18,9 +19,17 @@ namespace XamarinFreshMvvm.Pages.StuffList
             _stuffService = stuffService;
         }
 
-        protected override void ViewIsAppearing(object sender, EventArgs e)
+        protected override async void ViewIsAppearing(object sender, EventArgs e)
         {
-            Stuff = new ObservableCollection<StuffViewModel>(_stuffService.GetList());
+            try
+            {
+                MessagingCenter.Send(this, Helpers.Constants.Messages.ShowLoadingScreen);
+                Stuff = new ObservableCollection<StuffViewModel>(await _stuffService.GetList());    
+            }
+            finally
+            {
+                MessagingCenter.Send(this, Helpers.Constants.Messages.HideLoadingScreen);
+            }
         }
 
         public ObservableCollection<StuffViewModel> Stuff { get; set; } = new ObservableCollection<StuffViewModel>();

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using XamarinFreshMvvm.ViewModels;
 
 namespace XamarinFreshMvvm.Services
 {
     public interface IStuffService 
     {
-        List<StuffViewModel> GetList();
+        Task<List<StuffViewModel>> GetList();
         void Save(StuffViewModel vm);
         void Update(StuffViewModel vm);
     }
@@ -30,8 +31,9 @@ namespace XamarinFreshMvvm.Services
             }
         }
 
-        public List<StuffViewModel> GetList()
+        public async Task<List<StuffViewModel>> GetList()
         {
+            await Task.Delay(3000);
             return _list;
         }
 
