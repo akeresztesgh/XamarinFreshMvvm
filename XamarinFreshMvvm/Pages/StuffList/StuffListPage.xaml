@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinFreshMvvm.Pages.StuffList.StuffListPage">
+	<ContentPage.Content>
+
+        <ListView ItemsSource="{Binding Stuff}" 
+                    SelectedItem="{Binding SelectedStuff}"
+                    RowHeight='70'>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="8" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.ColumnSpan="3"
+                                   Text="{Binding Title}" FontAttributes="Bold"/>
+                            <Label Grid.Row="0" Grid.Column="3" Text="{Binding DateString}"
+                                    HorizontalTextAlignment="End" FontSize="10"/>                            
+                            <Label Grid.Row="1" Grid.Column="1"
+                                   Text="{Binding Id}" FontAttributes="None" FontSize="10"
+                                    TextColor="Gray"/>
+                            <Label Grid.Row="2" Grid.Column="1" FontSize="10"
+                                    TextColor="Gray">String1:</Label>
+                            <Label Grid.Row="2" Grid.Column="2" 
+                                    Text="{Binding String1}" 
+                                    FontSize="10"
+                                    TextColor="Gray"/>                            
+                            <Label Grid.Row="3" Grid.Column="1" 
+                                    FontSize="10"
+                                    TextColor="Gray"
+                                    Margin="0">
+                                Assigned To:</Label>
+                            <Label Grid.Row="3" Grid.Column="2" 
+                                    Text="{Binding String2}" 
+                                    FontSize="10" TextColor="Gray" Margin="0"/>
+                        </Grid>                                             
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+	</ContentPage.Content>
+</ContentPage>
