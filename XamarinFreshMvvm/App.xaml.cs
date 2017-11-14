@@ -1,6 +1,7 @@
 ﻿using FreshMvvm;
 using Xamarin.Forms;
 using XamarinFreshMvvm.Helpers;
+using XamarinFreshMvvm.Pages.StuffList;
 
 namespace XamarinFreshMvvm
 {
@@ -14,34 +15,21 @@ namespace XamarinFreshMvvm
             FreshMvvmRegister.Register();
             SetMainPage();
 
-            MainPage = new XamarinFreshMvvmPage();
+            //MainPage = new XamarinFreshMvvmPage();
         }
 
         public async void SetMainPage()
         {
             //var loginPage = FreshPageModelResolver.ResolvePageModel<LoginViewModel>();
-            //_loginContainer = new FreshNavigationContainer(loginPage, NavigationContainerNames.AuthenticationContainer);
+            //_loginContainer = new FreshNavigationContainer(loginPage, NavigationContainerNames.Auth);
 
-        //    _masterDetailNav = new FreshMasterDetailNavigationContainer();
-        //    _masterDetailNav.Init("Menu", "hamburger.png");
-        //    _masterDetailNav.AddPage<>("Stuff", null);
-        //    _masterDetailNav.AddPage<CarListViewModel>("CARS", null);
-        //    _masterDetailNav.AddPage<SignOutViewModel>("Sign Out", null);
+            _masterDetailNav = new FreshMasterDetailNavigationContainer();
+            _masterDetailNav.Init("Menu", "hamburger.png");
+            _masterDetailNav.AddPage<StuffListViewModel>("Stuff", null);
 
-        //    var authenticator = FreshIOC.Container.Resolve<IAuthenticator>();
-        //    //authenticator.SignOut(LoginViewModel.authority);
+            Current.MainPage = _masterDetailNav;
 
-        //    var isAuthenticated = authenticator.IsAuthenticated();
-        //    // if (isAuthenticated)
-        //    // {
-        //    //     await _masterDetailNav.SwitchSelectedRootPageModel<ActionItemListViewModel>();
-        //    //     Current.MainPage = _masterDetailNav;
-        //    // }
-        //    // else
-        //    {
-        //        Current.MainPage = _loginContainer;
-        //    }
-        //}
+        }
 
         protected override void OnStart()
         {

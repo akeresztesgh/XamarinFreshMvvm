@@ -7,7 +7,8 @@ namespace XamarinFreshMvvm.Services
     public interface IStuffService 
     {
         List<StuffViewModel> GetList();
-
+        void Save(StuffViewModel vm);
+        void Update(StuffViewModel vm);
     }
 
     public class StuffService : IStuffService
@@ -33,5 +34,16 @@ namespace XamarinFreshMvvm.Services
         {
             return _list;
         }
+
+        public void Save(StuffViewModel vm)
+        {
+            _list.Add(vm);   
+        }
+
+        public void Update(StuffViewModel vm)
+        {
+            // Normally something happens here    
+        }
+
     }
 }

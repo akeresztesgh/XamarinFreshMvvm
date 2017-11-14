@@ -40,7 +40,7 @@
                                     FontSize="10"
                                     TextColor="Gray"
                                     Margin="0">
-                                Assigned To:</Label>
+                                String2:</Label>
                             <Label Grid.Row="3" Grid.Column="2" 
                                     Text="{Binding String2}" 
                                     FontSize="10" TextColor="Gray" Margin="0"/>

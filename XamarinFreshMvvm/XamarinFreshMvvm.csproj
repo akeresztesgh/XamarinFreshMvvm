@@ -34,6 +34,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StuffDetails\StuffDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -51,6 +55,13 @@
       <DependentUpon>StuffListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Pages\StuffDetails\StuffDetailsViewModel.cs" />
+    <Compile Include="Pages\StuffDetails\StuffDetailsPage.xaml.cs">
+      <DependentUpon>StuffDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DelegateCommandBase.cs" />
+    <Compile Include="Helpers\DelegateCommand.cs" />
+    <Compile Include="Helpers\DelegateCommandT.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FreshIOC">
@@ -68,9 +79,13 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.4.0.74863\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.2.1.4\lib\netstandard1.0\PropertyChanged.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -78,7 +93,9 @@
     <Folder Include="Pages\" />
     <Folder Include="Pages\StuffList\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Pages\StuffDetails\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.4.0.74863\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.74863\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
 </Project>

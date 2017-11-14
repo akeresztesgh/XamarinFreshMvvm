@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using FreshMvvm;
 using XamarinFreshMvvm.Helpers;
+using XamarinFreshMvvm.Pages.StuffDetails;
 using XamarinFreshMvvm.Services;
 using XamarinFreshMvvm.ViewModels;
 
@@ -18,11 +19,23 @@ namespace XamarinFreshMvvm.Pages.StuffList
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            Stuff.AddRange(_stuffService.GetList());
+            Stuff = new ObservableCollection<StuffViewModel>(_stuffService.GetList());
         }
 
         public ObservableCollection<StuffViewModel> Stuff { get; set; } = new ObservableCollection<StuffViewModel>();
 
-        public StuffViewModel SelectedStuff { get; set; }
+        private StuffViewModel _selectedStuff;
+        public StuffViewModel SelectedStuff 
+        { 
+            get { return _selectedStuff; }
+            set
+            {
+                if(_selectedStuff != value)
+                {
+                    _selectedStuff = value;
+                    CoreMethods.PushPageModel<StuffDetailsViewModel>(value);
+                }
+            }
+        }
     }
 }

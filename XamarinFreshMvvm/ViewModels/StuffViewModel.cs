@@ -12,6 +12,6 @@ namespace XamarinFreshMvvm.ViewModels
         public string String1 { get; set; }
         public string String2 { get; set; }
         public DateTime Date1 { get; set; }
-        public string DateString { get { return Date1.ToString("g")} }
+        public string DateString { get { return Date1.ToString("g"); } }
     }
 }
