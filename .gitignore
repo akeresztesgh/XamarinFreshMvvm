@@ -1,1 +1,10 @@
-
+.DS_Store
+Droid/.DS_Store
+iOS/.DS_Store
+packages/
+iOS/bin
+iOS/obj
+Droid/bin
+Droid/obj
+XamarinFreshMvvm/bin
+XamarinFreshMvvm/obj
