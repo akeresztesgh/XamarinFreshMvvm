@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 using FreshMvvm;
 using XamarinFreshMvvm.Helpers;
 using XamarinFreshMvvm.Pages.StuffDetails;
@@ -36,6 +37,20 @@ namespace XamarinFreshMvvm.Pages.StuffList
                     CoreMethods.PushPageModel<StuffDetailsViewModel>(value);
                 }
             }
+        }
+
+        private ICommand _addStuffCommand;
+        public ICommand AddStuffCommand
+        {
+            get
+            {
+                return _addStuffCommand ?? (_addStuffCommand = new DelegateCommand(AddStuff)); 
+            }
+        }
+
+        private void AddStuff()
+        {
+            CoreMethods.PushPageModel<StuffDetailsViewModel>();
         }
     }
 }

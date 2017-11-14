@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinFreshMvvm.Pages.StuffList.StuffListPage">
-	<ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Text="Add" Priority="0" 
+                     Command="{Binding AddStuffCommand}"/>
+    </ContentPage.ToolbarItems>
 
+    <ContentPage.Content>
         <ListView ItemsSource="{Binding Stuff}" 
                     SelectedItem="{Binding SelectedStuff}"
                     RowHeight='70'>

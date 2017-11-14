@@ -1,21 +1,20 @@
 ﻿<Properties StartupConfiguration="{E7A81ABF-C39D-47D5-9F31-C88DE0E990FF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinFreshMvvm/Pages/StuffList/StuffListViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinFreshMvvm/Pages/StuffList/StuffListPage.xaml">
     <Files>
       <File FileName="XamarinFreshMvvm/ViewModels/StuffViewModel.cs" Line="16" Column="1" />
-      <File FileName="XamarinFreshMvvm/Pages/StuffList/StuffListViewModel.cs" Line="29" Column="11" />
+      <File FileName="XamarinFreshMvvm/Pages/StuffList/StuffListViewModel.cs" Line="22" Column="87" />
       <File FileName="XamarinFreshMvvm/Pages/StuffDetails/StuffDetailsViewModel.cs" Line="50" Column="9" />
       <File FileName="XamarinFreshMvvm/Pages/StuffDetails/StuffDetailsPage.xaml" Line="16" Column="32" />
       <File FileName="XamarinFreshMvvm/Helpers/DelegateCommandBase.cs" Line="162" Column="2" />
       <File FileName="XamarinFreshMvvm/Helpers/DelegateCommand.cs" Line="14" Column="10" />
       <File FileName="XamarinFreshMvvm/Helpers/DelegateCommandT.cs" Line="70" Column="39" />
       <File FileName="XamarinFreshMvvm/Services/StuffService.cs" Line="40" Column="30" />
+      <File FileName="XamarinFreshMvvm/Pages/StuffList/StuffListPage.xaml" Line="55" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ajk/code/XamarinFreshMvvm/XamarinFreshMvvm/Pages/StuffList/StuffListViewModel.cs" relfile="XamarinFreshMvvm/Pages/StuffList/StuffListViewModel.cs" line="22" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
